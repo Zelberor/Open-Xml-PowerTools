@@ -1251,6 +1251,8 @@ application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml
 
         private static void AddReferenceToExistingHeaderOrFooter(MainDocumentPart mainDocPart, XElement sect, string rId, XName reference, string toType)
         {
+            if (rId == null) return;
+
             if (reference == W.headerReference)
             {
                 var referenceToAdd = new XElement(W.headerReference,
